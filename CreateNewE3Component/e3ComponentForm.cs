@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace CreateNewE3Component
@@ -25,7 +21,7 @@ namespace CreateNewE3Component
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -53,7 +49,7 @@ namespace CreateNewE3Component
                 try
                 {
                     //временный компонент, нигде не использую
-                    ComponentAttribute.ComponentAttributeDataTable dataTable = new ComponentAttribute.ComponentAttributeDataTable();
+                    var dataTable = new ComponentAttribute.ComponentAttributeDataTable();
                     this.componentAttributeTableAdapter.FillBySelectedImbaseKeys(this.componentAttribute._ComponentAttribute, imbaseKey);
                     this.componentAttributeTableAdapter.ClearBeforeFill = false;
                     this.componentAttributeTableAdapter.FillBySelectedImbaseKeys(dataTable, imbaseKey);
@@ -70,6 +66,11 @@ namespace CreateNewE3Component
         }
 
         private void fillBySelectedImbaseKeysToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void componentAttributeBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

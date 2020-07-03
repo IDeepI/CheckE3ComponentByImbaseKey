@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.e3BaseDataGridView = new System.Windows.Forms.DataGridView();
-            this.inputTextBox = new System.Windows.Forms.RichTextBox();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.fillBySelectedImbaseKeysToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBySelectedImbaseKeysToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.componentAttributeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.componentAttribute = new CreateNewE3Component.ComponentAttribute();
-            this.componentAttributeTableAdapter = new CreateNewE3Component.ComponentAttributeTableAdapters.ComponentAttributeTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eNTRYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attributeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attributeValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.componentAttributeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.componentAttribute = new CreateNewE3Component.ComponentAttribute();
+            this.inputTextBox = new System.Windows.Forms.RichTextBox();
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.fillBySelectedImbaseKeysToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBySelectedImbaseKeysToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.componentAttributeTableAdapter = new CreateNewE3Component.ComponentAttributeTableAdapters.ComponentAttributeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.e3BaseDataGridView)).BeginInit();
-            this.fillBySelectedImbaseKeysToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.componentAttributeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentAttribute)).BeginInit();
+            this.fillBySelectedImbaseKeysToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // e3BaseDataGridView
@@ -62,6 +62,45 @@
             this.e3BaseDataGridView.RowTemplate.Height = 23;
             this.e3BaseDataGridView.Size = new System.Drawing.Size(953, 491);
             this.e3BaseDataGridView.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // eNTRYDataGridViewTextBoxColumn
+            // 
+            this.eNTRYDataGridViewTextBoxColumn.DataPropertyName = "ENTRY";
+            this.eNTRYDataGridViewTextBoxColumn.HeaderText = "ENTRY";
+            this.eNTRYDataGridViewTextBoxColumn.Name = "eNTRYDataGridViewTextBoxColumn";
+            this.eNTRYDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // attributeNameDataGridViewTextBoxColumn
+            // 
+            this.attributeNameDataGridViewTextBoxColumn.DataPropertyName = "AttributeName";
+            this.attributeNameDataGridViewTextBoxColumn.HeaderText = "AttributeName";
+            this.attributeNameDataGridViewTextBoxColumn.Name = "attributeNameDataGridViewTextBoxColumn";
+            this.attributeNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // attributeValueDataGridViewTextBoxColumn
+            // 
+            this.attributeValueDataGridViewTextBoxColumn.DataPropertyName = "AttributeValue";
+            this.attributeValueDataGridViewTextBoxColumn.HeaderText = "AttributeValue";
+            this.attributeValueDataGridViewTextBoxColumn.Name = "attributeValueDataGridViewTextBoxColumn";
+            this.attributeValueDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // componentAttributeBindingSource
+            // 
+            this.componentAttributeBindingSource.DataMember = "ComponentAttribute";
+            this.componentAttributeBindingSource.DataSource = this.componentAttribute;
+            this.componentAttributeBindingSource.CurrentChanged += new System.EventHandler(this.componentAttributeBindingSource_CurrentChanged);
+            // 
+            // componentAttribute
+            // 
+            this.componentAttribute.DataSetName = "ComponentAttribute";
+            this.componentAttribute.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inputTextBox
             // 
@@ -99,47 +138,9 @@
             this.fillBySelectedImbaseKeysToolStripButton.Text = "Найти коды в базе";
             this.fillBySelectedImbaseKeysToolStripButton.Click += new System.EventHandler(this.fillBySelectedImbaseKeysToolStripButton_Click);
             // 
-            // componentAttributeBindingSource
-            // 
-            this.componentAttributeBindingSource.DataMember = "ComponentAttribute";
-            this.componentAttributeBindingSource.DataSource = this.componentAttribute;
-            // 
-            // componentAttribute
-            // 
-            this.componentAttribute.DataSetName = "ComponentAttribute";
-            this.componentAttribute.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // componentAttributeTableAdapter
             // 
             this.componentAttributeTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // eNTRYDataGridViewTextBoxColumn
-            // 
-            this.eNTRYDataGridViewTextBoxColumn.DataPropertyName = "ENTRY";
-            this.eNTRYDataGridViewTextBoxColumn.HeaderText = "ENTRY";
-            this.eNTRYDataGridViewTextBoxColumn.Name = "eNTRYDataGridViewTextBoxColumn";
-            this.eNTRYDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // attributeNameDataGridViewTextBoxColumn
-            // 
-            this.attributeNameDataGridViewTextBoxColumn.DataPropertyName = "AttributeName";
-            this.attributeNameDataGridViewTextBoxColumn.HeaderText = "AttributeName";
-            this.attributeNameDataGridViewTextBoxColumn.Name = "attributeNameDataGridViewTextBoxColumn";
-            this.attributeNameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // attributeValueDataGridViewTextBoxColumn
-            // 
-            this.attributeValueDataGridViewTextBoxColumn.DataPropertyName = "AttributeValue";
-            this.attributeValueDataGridViewTextBoxColumn.HeaderText = "AttributeValue";
-            this.attributeValueDataGridViewTextBoxColumn.Name = "attributeValueDataGridViewTextBoxColumn";
-            this.attributeValueDataGridViewTextBoxColumn.Width = 200;
             // 
             // e3ComponentForm
             // 
@@ -154,10 +155,10 @@
             this.Text = "Компоненты базы E3";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.e3BaseDataGridView)).EndInit();
-            this.fillBySelectedImbaseKeysToolStrip.ResumeLayout(false);
-            this.fillBySelectedImbaseKeysToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.componentAttributeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentAttribute)).EndInit();
+            this.fillBySelectedImbaseKeysToolStrip.ResumeLayout(false);
+            this.fillBySelectedImbaseKeysToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
